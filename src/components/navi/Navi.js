@@ -39,13 +39,13 @@ export default class Navi extends React.Component {
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+            <NavItem style={{marginLeft:"650px"}}>
+              <NavLink href="/components/">Anasayfa</NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+            <NavItem style={{marginLeft:"30px"}}>
+              <NavLink href="/components/">Kategoriler</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+            <UncontrolledDropdown style={{marginLeft:"30px"}} nav inNavbar>
               <DropdownToggle nav caret>
                 Options
               </DropdownToggle>
