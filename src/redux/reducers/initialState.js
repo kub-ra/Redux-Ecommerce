@@ -1,4 +1,5 @@
 export default{
-    currentCategory:{categoryName:"kubra"},
-    categories:[]
+    currentCategory:{categoryName:""},
+    categories:[],
+    products:[]
 }
