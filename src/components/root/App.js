@@ -1,13 +1,20 @@
-import { Container, Row } from "reactstrap";
+import { Container } from "reactstrap";
 import Dashboard from "./Dashboard";
 import Navi from '../navi/Navi'
+import {Switch,Route} from 'react-router-dom'
+import CartDetail from "../cart/CartDetail";
 
 
 function App() {
   return (
     <Container>
-      <Row><Navi/></Row>
-      <Dashboard/>
+      <Navi/>
+      <Switch>
+        <Route path="/" exact component={Dashboard}/>
+        <Route path="/product" exact component={Dashboard}/>
+        <Route path="/cart" exact component={CartDetail}/>
+      </Switch>
+     
 
     </Container>
 
