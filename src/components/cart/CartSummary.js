@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as cartActions from '../../redux/actions/cartActions'
 import {
    
     UncontrolledDropdown,
@@ -18,6 +20,7 @@ import {
            </NavItem>
        )
      }
+    
      renderSummary(){
        return (
       <UncontrolledDropdown  nav inNavbar>
@@ -25,8 +28,9 @@ import {
         Sepetiniz
       </DropdownToggle>
       <DropdownMenu right>
-        {this.props.cart.map(cartItem=>(
+      {this.props.cart.map(cartItem=>(
           <DropdownItem key={cartItem.product.id}>
+            <span onClick={()=>this.props.actions.removeFromCart(cartItem.product)} class="badge bg-danger text-white">X</span>
           {cartItem.product.productName} 
           <span class="badge bg-info text-white">  {cartItem.quantity}</span>
         </DropdownItem>
@@ -44,6 +48,7 @@ import {
         
 
      }
+    
     render() {
         return (
             <div>
@@ -60,4 +65,12 @@ function mapStateToProps(state) {
     }
 
 }
-export default connect(mapStateToProps)(CartSummary)
+function mapDispatchToProps(dispatch) {
+  return {
+      actions: {
+        removeFromCart: bindActionCreators(cartActions.removeFromCart, dispatch)
+      }
+  }
+
+}
+export default connect(mapStateToProps,mapDispatchToProps)(CartSummary)
