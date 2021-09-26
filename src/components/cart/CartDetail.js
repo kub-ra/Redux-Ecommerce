@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import * as cartActions from '../../redux/actions/cartActions'
 import { Table ,Button} from 'reactstrap'
-import alertify from 'alertifyjs'
+
 
 
 class CartDetail extends Component {

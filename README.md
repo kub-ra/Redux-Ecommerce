@@ -1,3 +1,2 @@
-# Getting Started with Create React App
+#React & Redux with E-Commerce
 
-React-redux ile yaptığım e-ticaret sitesi..
