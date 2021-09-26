@@ -37,14 +37,17 @@ function AddOrUpdateProduct({
     if (name === "productName" && value === "") {
       setErrors(previousErrors => ({
         ...previousErrors,
-        productName: "Ürün ismi olmalıdır"
+        productName: "Ürün ismini Yazınız.",
+        unitPrice: "Unit price giriniz"
       }));
     }else{
         setErrors(previousErrors => ({
             ...previousErrors,
-            productName: ""
+            productName: "",
+            unitPrice: ""
           }));
     }
+   
   }
 
   function handleSave(event) {
